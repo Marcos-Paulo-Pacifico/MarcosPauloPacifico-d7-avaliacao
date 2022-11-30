@@ -25,5 +25,11 @@ namespace MarcosPauloPacifico_d7_avaliacao
             services.AddSingleton<MainWindow>();
             serviceProvider = services.BuildServiceProvider();
         }
+
+        private void OnStartup(object s, StartupEventArgs e)
+        {
+            var mainWindow = serviceProvider.GetService<MainWindow>();
+            mainWindow.Show();
+        }
     }
 }
